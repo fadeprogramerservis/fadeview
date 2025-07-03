@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تواصل معنا</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header>
+  <h1>تواصل معنا</h1>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="news.html">الأخبار</a>
+    <a href="contact.html">تواصل معنا</a>
+    <a href="admin.html" id="adminLink" style="display:none;">لوحة التحكم</a>
+  </nav>
+</header>
+
+<div class="container">
+  <form id="contactForm">
+    <label for="name">الاسم:</label>
+    <input type="text" id="name" required />
+
+    <label for="email">البريد الإلكتروني:</label>
+    <input type="email" id="email" required />
+
+    <label for="message">الرسالة:</label>
+    <textarea id="message" rows="5" required></textarea>
+
+    <button type="submit">إرسال</button>
+  </form>
+  <p id="responseMsg" style="color:green;display:none;margin-top:15px;">تم إرسال الرسالة بنجاح!</p>
+</div>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  this.reset();
+  document.getElementById('responseMsg').style.display = 'block';
+});
+</script>
+<script src="js/login.js"></script>
+</body>
+</html>
